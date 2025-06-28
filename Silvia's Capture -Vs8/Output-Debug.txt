@@ -1,0 +1,16 @@
+﻿'Silvia's Capture.exe' (CLR v4.0.30319: DefaultDomain): Loaded 'C:\WINDOWS\Microsoft.Net\assembly\GAC_64\mscorlib\v4.0_4.0.0.0__b77a5c561934e089\mscorlib.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+'Silvia's Capture.exe' (CLR v4.0.30319: DefaultDomain): Loaded 'C:\Silvia\Silvia's Capture -Vs4\Silvia's Capture\bin\Debug\Silvia's Capture.exe'. Symbols loaded.
+'Silvia's Capture.exe' (CLR v4.0.30319: Silvia's Capture.exe): Loaded 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Windows.Forms\v4.0_4.0.0.0__b77a5c561934e089\System.Windows.Forms.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+'Silvia's Capture.exe' (CLR v4.0.30319: Silvia's Capture.exe): Loaded 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System\v4.0_4.0.0.0__b77a5c561934e089\System.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+'Silvia's Capture.exe' (CLR v4.0.30319: Silvia's Capture.exe): Loaded 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Drawing\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Drawing.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+'Silvia's Capture.exe' (CLR v4.0.30319: Silvia's Capture.exe): Loaded 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Configuration\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Configuration.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+'Silvia's Capture.exe' (CLR v4.0.30319: Silvia's Capture.exe): Loaded 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Core\v4.0_4.0.0.0__b77a5c561934e089\System.Core.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+'Silvia's Capture.exe' (CLR v4.0.30319: Silvia's Capture.exe): Loaded 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Xml\v4.0_4.0.0.0__b77a5c561934e089\System.Xml.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+'Silvia's Capture.exe' (CLR v4.0.30319: Silvia's Capture.exe): Loaded 'C:\WINDOWS\Microsoft.Net\assembly\GAC_64\TIS.Imaging.ICImagingControl35\v4.0_3.5.6.4008__257805929e8b7928\TIS.Imaging.ICImagingControl35.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+The thread 0x5bd4 has exited with code 0 (0x0).
+The thread 0x6d0 has exited with code 0 (0x0).
+The thread 0x204c has exited with code 0 (0x0).
+The thread 0x4fec has exited with code 0 (0x0).
+The thread 0x46e4 has exited with code 0 (0x0).
+The thread 0x4b68 has exited with code 0 (0x0).
+The program '[2588] Silvia's Capture.exe' has exited with code 0 (0x0).

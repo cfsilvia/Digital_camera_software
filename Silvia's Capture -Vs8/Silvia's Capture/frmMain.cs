@@ -300,8 +300,8 @@ namespace Silvia_s_Capture
         
       public void StartRecordingNow(DateTime startRecordTime,int i)
         {
-           
-                _cameras[i].prepareCaptureIntervals(_settings.ImagePath,_settings.ImagePath_additional_Camera, this._startRecordTime[i], i);
+            
+               _cameras[i].prepareCaptureIntervals(_settings.ImagePath,_settings.ImagePath_additional_Camera, this._startRecordTime[i], i);
 
                _cameras[i].startCapture();
            

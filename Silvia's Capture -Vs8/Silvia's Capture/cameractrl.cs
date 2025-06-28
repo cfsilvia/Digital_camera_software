@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using TIS.Imaging;
 using System.Timers;
 using Silvia_s_Capture;
-
+ 
 namespace CameraCtrl
 {
      public partial class CameraCtrl : UserControl
@@ -48,6 +48,7 @@ namespace CameraCtrl
 
             _sink = new TIS.Imaging.FrameQueueSink((img) => ProcessImage(img), MediaSubtypes.RGB32, 5);
             _ic.Sink = _sink;
+            
             try
             {
                 _ic.LoadDeviceStateFromFile(Path.Combine(_DataDir, String.Format("device{0}.xml", _Number)), true);
@@ -189,7 +190,10 @@ namespace CameraCtrl
             // int BITRATE = 60 * 250000;
             // int BITRATE = 60 * 500000;
             // int BITRATE = 40 * 1000000;
-           
+            //CHECK IF THE DEVICE WAS  NOT LOST- Add Silvia 2025
+            // Attach event handler for device lost if the device was lost go to the function DeviceLostHandler
+            _ic.DeviceLost += DeviceLostHandler;
+
             if (_ic.LiveDisplayOutputWidth == 1024) {
                 BITRATE = 60 * 250000;
             }
@@ -302,6 +306,64 @@ namespace CameraCtrl
         private void _ic_Load(object sender, EventArgs e)
         {
 
+        }
+        public void DeviceLostHandler(object sender, EventArgs e)
+        {
+            LogToFile("Device " + _Number + " lost!");
+            // Stop live video safely
+            if (_ic.LiveVideoRunning)
+            {
+                _ic.LiveStop();
+            }
+
+            // Retry loop: wait until device is reconnected
+            while (true)
+            {
+                try
+                {
+                    // Check if any camera is available
+                    if (_ic.Devices.Length > 0)
+                    {
+                        // Try reassigning the device
+                        _ic.LoadDeviceStateFromFile(Path.Combine(_DataDir, String.Format("device{0}.xml", _Number)), true);
+                        StartDevice();
+                        // _ic.Device = _ic.Devices[_Number].Name;
+
+                        //_ic.LiveStart();
+
+
+                        Console.WriteLine("Camera" + _Number +  "reconnected successfully!");
+                        break; // Exit the loop
+                    }
+                    else
+                    {
+                        Console.WriteLine("Still waiting for camera to reconnect...");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Reconnection failed: " + ex.Message);
+                }
+
+                // Wait a bit before retrying
+                System.Threading.Thread.Sleep(2000); // 2 seconds
+            }
+
+
+        }
+
+        private static void LogToFile(string message)
+        {
+            string logFilePath = "D:\\LogFiles\\camera_log.txt";
+            string timestamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff"); // Millisecond precision
+            try
+            {
+                File.AppendAllText(logFilePath, $"[{timestamp}] {message}{Environment.NewLine}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error writing to log file: " + ex.Message);
+            }
         }
     }
 }
